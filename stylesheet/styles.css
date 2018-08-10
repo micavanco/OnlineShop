@@ -1,25 +1,37 @@
 body
 {
     margin: 0px;
-    font-family: "Calibri Light", Calibri , sans-serif;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 .wrapper
 {
-    margin: 0px auto;
+    margin: 0 auto !important;
+    padding: 0;
     max-width: 960px;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+ul
+{
+    list-style-type: none;
 }
 /*---- Header ---- */
 .header
 {
     background-color: rgba(134,134,134,0.25);
-    padding: 0.1%;
     font-size: 200%;
+    padding: 10px;
+    width: auto;
 }
 .header ul
 {
-    list-style-type: none;
     margin: 0px;
-    padding: 1% 1% 1% 2%;
+    padding: 1px 1px 1px 4px;
     overflow: hidden;
 }
 .header li
@@ -30,16 +42,11 @@ body
 .header a
 {
     display: block;
-    padding-right: 5%;
-    text-decoration: none;
     color: #343434;
+    transition: text-shadow 0.2s ease-in-out;
 }
 .header a:hover
 {
-    display: block;
-    padding-right: 5%;
-    text-decoration: none;
-    color: #343434;
     text-shadow: 1px 1px #343434;
 }
 li.logo
@@ -50,42 +57,183 @@ li.logo
 .content
 {
     margin-top: 3%;
+    margin-bottom: 0;
     background: rgba(134,134,134,0.25);
-    height: 840px;
-}
-
-.side-container
-{
-    background: rgba(134,134,134,0.25);
-    margin: 10px;
-    width: 220px;
-    height: 820px;
-    float: left;
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    grid-gap: 10px;
 }
 
 .head-container
 {
     background: rgba(134,134,134,0.25);
-    margin: 10px;
-    width: 700px;
+    grid-column: 1 / 4;
     height: 230px;
-    float: left;
 }
+
+.advertisement
+{
+    background-color: aliceblue;
+    margin: 10px;
+    width: 940px;
+    height: 210px;
+}
+
+.side-container
+{
+    background: rgba(134,134,134,0.25);
+    grid-column: 1 / 1;
+    grid-row: 2 / auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.side-container h1
+{
+    font-size: 25px;
+    text-decoration: none;
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid black;
+}
+
+.side-products
+{
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in;
+}
+
+.side-products a
+{
+    font-size: 23px;
+    color: black;
+    text-align: left;
+}
+
+.side-products:hover
+{
+    background-color: rgb(172, 172, 172);
+}
+
 
 .main-container
 {
     background: rgba(134,134,134,0.25);
-    margin: 10px;
-    width: 700px;
-    height: 570px;
-    float: left;
+    grid-column: 2 / 4;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-area: auto;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.products
+{
+    background-color: aliceblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 330px;
+    width: 330px;
+    transition: all 0.3s ease-in-out;
+}
+
+.products:hover
+{
+    transform: scale(1.05);
+    box-shadow: 3px 3px 18px rgb(120, 120, 120);
 }
 /*---- Footer ---- */
 
 .footer
 {
     background: rgba(134,134,134,0.25);
-    margin-top: 3%;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
+    margin-top: 10px;
     height: 80px;
+    overflow: auto;
+}
+
+.footer-content
+{
+    background-color: aliceblue;
+    margin: 10px;
+    width: auto;
+    height: 60px;
+}
+
+/*---- Screen from 960px to 720px ----*/
+@media only screen and (max-width: 960px) and (min-width: 720px)
+{
+    .side-container
+    {
+        display: none;
+    }
+
+    .main-container
+    {
+        grid-column: 1 / 4;
+        grid-row: 1 / auto;
+    }
+
+    .head-container
+    {
+        display: none;
+    }
+}
+
+/*---- Screen from 720px to 320px ----*/
+@media only screen and (max-width: 720px) and (min-width: 320px)
+{
+    .side-container
+    {
+        display: none;
+    }
+
+    .main-container
+    {
+        grid-column: 1 / 4;
+        grid-row: 1 / auto;
+        grid-template-columns: 1fr;
+    }
+
+    .head-container
+    {
+        display: none;
+    }
+
+}
+
+/*---- Screen from 320px to 0px ----*/
+@media only screen and (max-width: 720px) and (min-width: 320px)
+{
+    .side-container
+    {
+        display: none;
+    }
+
+    .main-container
+    {
+        grid-column: 1 / 4;
+        grid-row: 1 / auto;
+        grid-template-columns: 1fr;
+    }
+
+    .head-container
+    {
+        display: none;
+    }
+
+    .products
+    {
+        height: 280px;
+        width: 280px;
+    }
+
+    .header
+    {
+        font-size: 25px;
+    }
 }
