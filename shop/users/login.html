@@ -14,7 +14,7 @@
             <li class="logo"><a href="#">Olech</a></li>
             <li><a href="#" class="about">About</a></li>
             <li><a href="#" class="login">Sign in</a></li>
-            <li><a href="#" class="shop">Shop</a></li>
+            <li><a href="../shop.html" class="shop">Shop</a></li>
         </ul>
     </div><!-- Header -->
     <div class="content">
@@ -23,12 +23,12 @@
             <div class="sign-up">
                 <form>
                     <p>Email or username</p>
-                    <input type="text" name="login">
+                    <input type="text" name="login" placeholder="e.g. mr@bean-company.com" onfocus="this.placeholder=''" onblur="this.placeholder='e.g. mr@bean-company.com'">
                     <p>Password</p>
-                    <input type="password" name="password">
-                    </br></br>
+                    <input type="password" name="password" placeholder="e.g. ********" onfocus="this.placeholder=''" onblur="this.placeholder='e.g. ********'">
+                    <br/><br/>
                     <input type="submit" value="Login" name="login-button">
-                    </br></br>
+                    <br/><br/>
                     <div class="register-line">New customer?</div>
                     <input type="submit" value="Create account" name="register-button">
                 </form>

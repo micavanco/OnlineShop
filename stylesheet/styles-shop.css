@@ -114,13 +114,59 @@ li.logo
 
 .search-field
 {
-    background-color: aliceblue;
+    background: rgba(134,134,134,0.25);
     margin: 10px;
     height: 60px;
     width: 680px;
-    float: left;
     transition: all 0.3s ease-in-out;
     z-index: 9;
+    float: right;
+}
+
+input[name="search"]
+{
+    float: left;
+    height: 55px;
+    outline: none;
+    font-size: 25px;
+    width: 616px;
+}
+
+input[name="search"]:focus
+{
+    border: 2px solid #806f5a;
+    background-color: white;
+    box-shadow: -3px 1px 2px 1px gray;
+}
+
+input[name="search-button"]
+{
+    float: right;
+    height: 60px;
+    background-color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    width: 60px;
+    background: url("../images/SVG/magnifier.svg") no-repeat;
+    background-size: contain;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 1px 1px 2px 1px gray;
+}
+
+input[name="search-button"]:hover
+{
+    box-shadow: 2px 2px 5px 2px gray;
+}
+
+input[name="search-button"]:active
+{
+    background: url("../images/SVG/magnifier2.svg") no-repeat;
+    background-size: contain;
+    box-shadow: 1px 1px 4px 4px gray;
 }
 
 .info-container
@@ -226,7 +272,7 @@ li.logo
     height: 60px;
 }
 
-/*---- Screen from 960px to 720px ----*/
+/*---- Screen from 960px to 700px ----*/
 @media only screen and (max-width: 960px) and (min-width: 700px)
 {
     .side-container
@@ -243,39 +289,32 @@ li.logo
     {
         display: none;
     }
-}
 
-/*---- Screen from 720px to 320px ----*/
-@media only screen and (max-width: 700px) and (min-width: 320px)
-{
-    .side-container
-    {
-        display: none;
-    }
-
-    .main-container
-    {
-        margin: auto;
-        width: auto;
-    }
-
-    .products
+    .search-container
     {
         margin: 10px auto;
-        float: none;
     }
 
-    .head-container
+    .roll-container
+    {
+        margin: 10px auto;
+    }
+
+    .info-container
+    {
+        margin: 10px auto;
+    }
+}
+
+/*---- Screen from 700px to 600px ----*/
+@media only screen and (max-width: 700px) and (min-width: 540px)
+{
+    .side-container
     {
         display: none;
     }
 
-}
-
-/*---- Screen from 320px to 0px ----*/
-@media only screen and (max-width: 320px) and (min-width: 0px)
-{
-    .side-container
+    .head-container
     {
         display: none;
     }
@@ -283,12 +322,52 @@ li.logo
     .main-container
     {
         margin: auto;
+        position: center;
+        width: 540px;
+    }
+
+    .search-container
+    {
+        margin: 10px auto;
         width: auto;
     }
 
-    .head-container
+    .search-field
     {
-        display: none;
+        width: auto;
+        float: none;
+        position: absolute;
+    }
+
+    .roll-container
+    {
+        width: auto;
+        margin: 0;
+    }
+
+    .products-roll
+    {
+        width: 97%;
+    }
+
+    .info-container
+    {
+        margin: 10px auto;
+        width: auto;
+    }
+
+    input[name="search"]
+    {
+        position: relative;
+        width: 100%;
+        z-index: 9;
+    }
+
+    input[name="search-button"]
+    {
+        position: absolute;
+        right: 0;
+        z-index: 10;
     }
 
     .products
@@ -297,8 +376,158 @@ li.logo
         width: 250px;
     }
 
+}
+
+/*---- Screen from 550px to 350px ----*/
+@media only screen and (max-width: 540px) and (min-width: 350px)
+{
     .header
     {
         font-size: 25px;
     }
+    .side-container
+    {
+        display: none;
+    }
+
+    .head-container
+    {
+        display: none;
+    }
+
+    .main-container
+    {
+        margin: auto;
+        width: auto;
+    }
+
+    .search-container
+    {
+        margin: 10px auto;
+        width: auto;
+    }
+
+    .search-field
+    {
+        width: auto;
+        float: none;
+        position: relative;
+    }
+
+    .roll-container
+    {
+        width: auto;
+        margin: 0;
+    }
+
+    .products-roll
+    {
+        width: 95%;
+    }
+
+    .info-container
+    {
+        margin: 10px auto;
+        width: auto;
+    }
+
+    input[name="search"]
+    {
+        position: relative;
+        width: 100%;
+        z-index: 9;
+    }
+
+    input[name="search-button"]
+    {
+        position: absolute;
+        right: 0;
+        z-index: 10;
+    }
+
+    .products
+    {
+        height: 330px;
+        width: 330px;
+        margin: 10px auto;
+        float: none;
+    }
+
+}
+
+/*---- Screen from 700px to 320px ----*/
+@media only screen and (max-width: 350px)
+{
+    .header
+    {
+        font-size: 25px;
+    }
+    .side-container
+    {
+        display: none;
+    }
+
+    .head-container
+    {
+        display: none;
+    }
+
+    .main-container
+    {
+        margin: auto;
+        width: auto;
+    }
+
+    .search-container
+    {
+        margin: 10px auto;
+        width: auto;
+    }
+
+    .search-field
+    {
+        width: auto;
+        float: none;
+        position: relative;
+    }
+
+    .roll-container
+    {
+        width: auto;
+        margin: 0;
+    }
+
+    .products-roll
+    {
+        width: 93%;
+    }
+
+    .info-container
+    {
+        margin: 10px auto;
+        width: auto;
+    }
+
+    input[name="search"]
+    {
+        position: relative;
+        width: 100%;
+        z-index: 9;
+    }
+
+    input[name="search-button"]
+    {
+        position: absolute;
+        right: 0;
+        z-index: 10;
+    }
+
+    .products
+    {
+        height: 250px;
+        width: 250px;
+        margin: 10px auto;
+        float: none;
+    }
+
 }
