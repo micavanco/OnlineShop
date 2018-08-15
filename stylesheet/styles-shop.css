@@ -169,7 +169,7 @@ input[name="search-button"]:active
     box-shadow: 1px 1px 4px 4px gray;
 }
 /*...... Info Bar ......*/
-.info-container
+.info-container, .offer-container
 {
     background: rgba(134,134,134,0.25);
     overflow: hidden;
@@ -228,6 +228,7 @@ input[name="search-button"]:active
     text-align: center;
     box-shadow: 1px 1px 1px 1px gray;
     -webkit-box-shadow: 1px 1px 1px 1px gray;
+    color: black;
 }
 
 /*...... Side Menu ......*/
@@ -351,7 +352,7 @@ input[name="search-button"]:active
         margin: 10px auto;
     }
 
-    .info-container
+    .info-container, .offer-container
     {
         margin: 10px auto;
     }
@@ -425,6 +426,27 @@ input[name="search-button"]:active
     {
         height: 250px;
         width: 250px;
+    }
+
+    .offer-container
+    {
+        height: 165px;
+        margin: 10px auto;
+        position: center;
+        width: 545px;
+    }
+
+    .special-offer
+    {
+        float: left;
+        height: 140px;
+        max-width: 520px;
+    }
+
+    .offer-clock
+    {
+        margin: 10px auto;
+        float: none;
     }
 
 }
@@ -504,6 +526,27 @@ input[name="search-button"]:active
         float: none;
     }
 
+    .offer-container
+    {
+        height: 175px;
+        margin: 10px auto;
+        width: auto;
+    }
+
+    .special-offer
+    {
+        float: left;
+        height: 150px;
+        width: 94%;
+        text-align: center;
+    }
+
+    .offer-clock
+    {
+        margin: 10px auto;
+        float: none;
+    }
+
 }
 
 /*---- Screen from 700px to 320px ----*/
@@ -577,6 +620,27 @@ input[name="search-button"]:active
     {
         height: 250px;
         width: 250px;
+        margin: 10px auto;
+        float: none;
+    }
+
+    .offer-container
+    {
+        height: 175px;
+        margin: 10px auto;
+        width: auto;
+    }
+
+    .special-offer
+    {
+        float: left;
+        height: 150px;
+        width: 93%;
+        text-align: center;
+    }
+
+    .offer-clock
+    {
         margin: 10px auto;
         float: none;
     }
