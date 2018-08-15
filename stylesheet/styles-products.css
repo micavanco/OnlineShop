@@ -133,6 +133,74 @@ li.logo
     margin-bottom: 10px;
 }
 
+.search-container
+{
+    background: rgba(134,134,134,0.25);
+    overflow: hidden;
+    width: 700px;
+    height: 80px;
+    margin-right: 10px;
+    z-index: 8;
+    margin-bottom: 10px;
+}
+
+.search-field
+{
+    background: rgba(134,134,134,0.25);
+    margin: 10px;
+    height: 60px;
+    width: 680px;
+    transition: all 0.3s ease-in-out;
+    z-index: 9;
+    float: right;
+}
+
+input[name="search"]
+{
+    float: left;
+    height: 55px;
+    outline: none;
+    font-size: 25px;
+    width: 616px;
+}
+
+input[name="search"]:focus
+{
+    border: 2px solid #806f5a;
+    background-color: white;
+    box-shadow: -3px 1px 2px 1px gray;
+}
+
+input[name="search-button"]
+{
+    float: right;
+    height: 60px;
+    background-color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    width: 60px;
+    background: url("../images/SVG/magnifier.svg") no-repeat;
+    background-size: contain;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 1px 1px 2px 1px gray;
+}
+
+input[name="search-button"]:hover
+{
+    box-shadow: 2px 2px 5px 2px gray;
+}
+
+input[name="search-button"]:active
+{
+    background: url("../images/SVG/magnifier2.svg") no-repeat;
+    background-size: contain;
+    box-shadow: 1px 1px 4px 4px gray;
+}
+
 .products
 {
     background-color: aliceblue;
@@ -188,6 +256,11 @@ li.logo
     {
         display: none;
     }
+
+    .search-container
+    {
+        margin: 10px auto;
+    }
 }
 
 /*---- Screen from 720px to 320px ----*/
@@ -215,6 +288,32 @@ li.logo
         display: none;
     }
 
+    .search-container
+    {
+        margin: 10px auto;
+        width: auto;
+    }
+
+    .search-field
+    {
+        width: auto;
+        float: none;
+        position: relative;
+    }
+
+    input[name="search"]
+    {
+        position: relative;
+        width: 100%;
+        z-index: 9;
+    }
+
+    input[name="search-button"]
+    {
+        position: absolute;
+        right: 0;
+        z-index: 10;
+    }
 }
 
 /*---- Screen from 320px to 0px ----*/
@@ -245,5 +344,33 @@ li.logo
     .header
     {
         font-size: 25px;
+    }
+
+    .search-container
+    {
+        margin: 10px auto;
+        width: auto;
+    }
+
+    .search-field
+    {
+        width: auto;
+        float: none;
+        position: relative;
+    }
+
+    input[name="search"]
+    {
+        position: relative;
+        width: 100%;
+        z-index: 9;
+        font-size: 20px;
+    }
+
+    input[name="search-button"]
+    {
+        position: absolute;
+        right: 0;
+        z-index: 10;
     }
 }
