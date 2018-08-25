@@ -26,7 +26,10 @@ ul
     background-color: rgba(134,134,134,0.25);
     font-size: 200%;
     padding: 10px;
-    width: auto;
+    width: 940px;
+    top: 0;
+    margin: 0 auto 0 auto;
+    z-index: 10;
 }
 .header ul
 {
@@ -53,10 +56,32 @@ li.logo
 {
     float: left;
 }
+
+.cart
+{
+    margin-top: -4px;
+    margin-right: -10px;
+    width: 50px;
+    height: 50px;
+    background: url("../images/SVG/cart.svg") no-repeat;
+    background-size: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.cart:hover
+{
+    background: url("../images/SVG/cart2.svg") no-repeat;
+    background-size: contain;
+}
+
+#header
+{
+    position: fixed !important;
+}
 /*---- Content ---- */
 .content
 {
-    margin-top: 3%;
+    margin-top: 20px;
     margin-bottom: 0;
     background: rgba(134,134,134,0.25);
     overflow: auto;
@@ -132,6 +157,13 @@ input[name="search"]
     width: 616px;
 }
 
+.search-field2
+{
+    height: 45px !important;
+    width: auto !important;
+    font-size: 18px !important;
+}
+
 input[name="search"]:focus
 {
     border: 2px solid #806f5a;
@@ -155,6 +187,12 @@ input[name="search-button"]
     border-radius: 12px;
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 1px 1px 2px 1px gray;
+}
+
+.search-button
+{
+    height: 50px !important;
+    width: 50px !important;
 }
 
 input[name="search-button"]:hover
@@ -324,12 +362,33 @@ input[name="search-button"]:active
     height: 60px;
 }
 
+.fade-in
+{
+    animation: fade-in 2s 1;
+}
+
+@keyframes fade-in {
+    from {top: -120px;}
+    to {top: 0;}
+}
+
 /*---- Screen from 960px to 700px ----*/
 @media only screen and (max-width: 960px) and (min-width: 700px)
 {
+    .header
+    {
+        width: 100%;
+    }
+
     .side-container
     {
         display: none;
+    }
+
+    .content
+    {
+        margin: 20px -20px 0 0;
+        padding-bottom: 10px;
     }
 
     .main-container
@@ -356,11 +415,26 @@ input[name="search-button"]:active
     {
         margin: 10px auto;
     }
+
+    .cart
+    {
+        margin-right: -10px;
+    }
+
+    .footer
+    {
+        margin-right: -20px;
+    }
 }
 
-/*---- Screen from 700px to 600px ----*/
+/*---- Screen from 700px to 540px ----*/
 @media only screen and (max-width: 700px) and (min-width: 540px)
 {
+    .header
+    {
+        width: 100%;
+    }
+
     .side-container
     {
         display: none;
@@ -369,6 +443,12 @@ input[name="search-button"]:active
     .head-container
     {
         display: none;
+    }
+
+    .content
+    {
+        margin: 20px -20px 0 0;
+        padding-bottom: 10px;
     }
 
     .main-container
@@ -386,7 +466,7 @@ input[name="search-button"]:active
 
     .search-field
     {
-        width: auto;
+        width: 99%;
         float: none;
         position: absolute;
     }
@@ -422,6 +502,11 @@ input[name="search-button"]:active
         z-index: 10;
     }
 
+    .search-button
+    {
+        position: relative !important;
+    }
+
     .products
     {
         height: 250px;
@@ -449,14 +534,40 @@ input[name="search-button"]:active
         float: none;
     }
 
+    .cart
+    {
+        margin-right: -10px;
+    }
+
+    .footer
+    {
+        margin-right: -20px;
+    }
+
+    #header
+    {
+        width: 99% !important;
+    }
+
+    .shop2
+    {
+        display: none !important;
+    }
+
+    .login2
+    {
+        display: none !important;
+    }
+
 }
 
-/*---- Screen from 550px to 350px ----*/
+/*---- Screen from 540px to 350px ----*/
 @media only screen and (max-width: 540px) and (min-width: 350px)
 {
     .header
     {
         font-size: 25px;
+        width: 100%;
     }
     .side-container
     {
@@ -466,6 +577,12 @@ input[name="search-button"]:active
     .head-container
     {
         display: none;
+    }
+
+    .content
+    {
+        margin: 20px -20px 0 0;
+        padding-bottom: 10px;
     }
 
     .main-container
@@ -511,11 +628,21 @@ input[name="search-button"]:active
         z-index: 9;
     }
 
+    .search-field2
+    {
+        width: 83% !important;
+    }
+
     input[name="search-button"]
     {
         position: absolute;
         right: 0;
         z-index: 10;
+    }
+
+    .search-button
+    {
+        position: relative !important;
     }
 
     .products
@@ -535,26 +662,51 @@ input[name="search-button"]:active
 
     .special-offer
     {
-        float: left;
+        float: none;
         height: 150px;
-        width: 94%;
+        width: 99%;
         text-align: center;
     }
 
-    .offer-clock
+    .offer-clock, .special-offer > p
     {
         margin: 10px auto;
         float: none;
     }
 
+    .cart
+    {
+        margin-right: 0;
+    }
+
+    .footer
+    {
+        margin-right: -20px;
+    }
+
+    #header
+    {
+        width: 95% !important;
+    }
+
+    .shop2
+    {
+        display: none !important;
+    }
+
+    .login2
+    {
+        display: none !important;
+    }
 }
 
-/*---- Screen from 700px to 320px ----*/
+/*---- Screen max 350px ----*/
 @media only screen and (max-width: 350px)
 {
     .header
     {
         font-size: 25px;
+        width: 100%;
     }
     .side-container
     {
@@ -564,6 +716,12 @@ input[name="search-button"]:active
     .head-container
     {
         display: none;
+    }
+
+    .content
+    {
+        margin: 20px -20px 0 0;
+        padding-bottom: 10px;
     }
 
     .main-container
@@ -609,11 +767,22 @@ input[name="search-button"]:active
         z-index: 9;
     }
 
+    .search-field2
+    {
+
+        width: 80% !important;
+    }
+
     input[name="search-button"]
     {
         position: absolute;
         right: 0;
         z-index: 10;
+    }
+
+    .search-button
+    {
+        position: relative !important;
     }
 
     .products
@@ -635,7 +804,7 @@ input[name="search-button"]:active
     {
         float: left;
         height: 150px;
-        width: 93%;
+        width: 99%;
         text-align: center;
     }
 
@@ -643,6 +812,31 @@ input[name="search-button"]:active
     {
         margin: 10px auto;
         float: none;
+    }
+
+    .cart
+    {
+        margin-right: 0;
+    }
+
+    .footer
+    {
+        margin-right: -20px;
+    }
+
+    #header
+    {
+        width: 95% !important;
+    }
+
+    .shop2
+    {
+        display: none !important;
+    }
+
+    .login2
+    {
+        display: none !important;
     }
 
 }
