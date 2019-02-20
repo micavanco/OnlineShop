@@ -42,19 +42,7 @@ public class Customer {
         this.createdAt = new Date();
     }
 
-    public Customer(String username, String email, String password, String firstName, String lastName, Date birthDate, String gender, String country, String city, int zipCode, Long phoneNumber) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.gender = gender;
-        this.country = country;
-        this.city = city;
-        this.zipCode = zipCode;
-        this.phoneNumber = phoneNumber;
-    }
+    public Customer(){}
 
     public Long getId() {
         return id;
