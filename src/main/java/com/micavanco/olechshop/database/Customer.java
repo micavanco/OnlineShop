@@ -1,6 +1,10 @@
 package com.micavanco.olechshop.database;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 
@@ -11,28 +15,41 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Username is required")
+    @Size(min=3, message = "Username has to be longer than 2 characters")
+    @Column(updatable = false, unique = true)
     private String username;
 
+    @NotBlank(message = "Email is required")
     private String email;
 
+    @NotBlank(message = "Password is required")
+    @Size(min=7, message = "Password has to be longer than 6 characters")
     private String password;
 
+    @NotBlank(message = "First name is required")
     private String firstName;
 
+    @NotBlank(message = "Last name is required")
     private String lastName;
+
 
     private Date birthDate;
 
     private String gender;
 
+    @NotBlank(message = "Country is required")
     private String country;
 
+    @NotBlank(message = "City is required")
     private String city;
 
-    private int zipCode;
+    @NotBlank(message = "Zip code is required")
+    private String zipCode;
 
     private Long phoneNumber;
 
+    @JsonFormat(pattern = "dd-mm-yyyy")
     private Date createdAt;
 
     // when new object is created
@@ -124,11 +141,11 @@ public class Customer {
         this.city = city;
     }
 
-    public int getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 
