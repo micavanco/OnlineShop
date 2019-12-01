@@ -41,3 +41,29 @@ def products_list(request):
     if request.method == 'DELETE':
         Product.objects.all().delete()
         return HttpResponse(status=status.HTTP_204_NO_CONTENT)
+
+@csrf_exempt
+def product_detail(request, pk):
+    try:
+        product = Product.objects.get(pk=pk)
+    except Product.DoesNotExist:
+        return HttpResponse(status=status.HTTP_404_NOT_FOUND)
+
+    # Retrieve one
+    if request.method == 'GET':
+        product_serializer = ProductSerializer(product)
+        return JsonResponse(product_serializer.data)
+
+    # Update one record
+    if request.method == 'PUT':
+        product_data = JSONParser().parse(request)
+        product_serializer = ProductSerializer(product_data)
+        if product_serializer.is_valid():
+            product_serializer.save()
+            return JsonResponse(product_serializer.data)
+        return JsonResponse(product_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    # Delete one record
+    if request.method == 'DELETE':
+        product.delete()
+        return HttpResponse(status=status.HTTP_204_NO_CONTENT)

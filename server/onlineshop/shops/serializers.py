@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from server.onlineshop.shops.models import Product
+from .models import Product
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
